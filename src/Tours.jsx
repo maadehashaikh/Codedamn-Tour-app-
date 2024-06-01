@@ -26,8 +26,8 @@
 import React from 'react'
 import Tour from './Tour'
 
-const Tours = ({ props }) => {
-	const { tours } = props
+const Tours = ({ tours }) => {
+	// const { tours } = props
 	return (
 		<section>
 			<div className="title">
@@ -40,7 +40,8 @@ const Tours = ({ props }) => {
 					<Tour key={tour.id} {...tour} />
 				))}
 				<Tour
-					id={2}
+				  key={999}
+					id={3}
 					image={'something'}
 					info={'something'}
 					price={3}

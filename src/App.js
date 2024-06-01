@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Loading from './Loading'
 import Tours from './Tours'
 
-const url = '/react-tours-project'
+const url = '/react-tours-project';
 
 function App() {
   const [tours, setTours] = useState([]);
