@@ -27,7 +27,7 @@ if (loading) {
             {/* {tours.map((tour) => (
                 <h2 key={tour.id}>{tour.name}</h2>
             ))} */}
-            <Tours tours={[tours]} />
+            <Tours tours={tours} />
         </div>
   )
   }
