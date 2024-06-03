@@ -11,16 +11,16 @@ const Tours = ({ tours }) => {
 			</div>
 			<div>
 				{/* map over tours and display UI */}
-				{tours.map((tour , index) => (
-					<Tour key={tour.index} {...tour} />
+				{tours.map((tour) => (
+					<Tour key={tour.id} {...tour} />
 				))}
-				{/* <Tour
+				<Tour
 				  id={tours.id}
 					image={tours.image}
 					info={tours.info}
 					price={tours.price}
 					name={tours.name}
-				/> */}
+				/>
 			</div>
 		</section>
 	)
