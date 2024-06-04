@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import App from './App.css'
 
 const Tour = (props) => {
 	const { id, image, info, price, name } = props
