@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import App from './App.css'
 
 const Tour = (props) => {
-	const { id, image, info, price, name } = props
-
+	const { id, image, info, price, name , removeTour} = props
+	const [readmore,setReadmore] = useState(true);
+	const description = info.substring(0,200);
+	console.log(description);
 	// render them here. Read instructions
 	return (
 		<article className="single-tour">
@@ -13,8 +15,12 @@ const Tour = (props) => {
 					<h4>{name}</h4>
 					<h4 className="tour-price">{price}</h4>
 				</div>
-				<p>{info}</p>
-				<button className="delete-btn">Not Interested</button>
+				<p>{readmore ? description : info} 
+					<button onClick={() => setReadmore(!readmore)}>
+						{readmore ? 'read more' : 'show less'}
+					</button>
+				</p>
+				<button className="delete-btn" onClick={() => removeTour(id)}>Not Interested</button>
 			</footer>
 		</article>
 	)

@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react'
 import Loading from './Loading'
 import Tours from './Tours'
 
-
 const url = '/react-tours-project';
 
 function App() {
   const [tours, setTours] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  function removeTour(id) {
+	   const newTours = tours.filter (tour => tour.id !== id);
+     setTours(newTours);
+  }
 
   async function fetchTours(){
       setLoading(true);
@@ -28,8 +32,8 @@ if (loading) {
             {/* {tours.map((tour) => (
                 <h2 key={tour.id}>{tour.name}</h2>
             ))} */}
-            <Tours tours={tours} />
-        </div>
+            <Tours tours={tours} removeTour={removeTour}/>
+    </div>
   )
   }
 
